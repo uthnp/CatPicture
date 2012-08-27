@@ -21,7 +21,7 @@ class CatPictureApp : public AppBasic {
 
 void CatPictureApp::setup() //for when program starts
 {
-	red = 0.0;
+	red = 1.0;
 	green = 0.0;
 	blue = 0.0;
 }
@@ -32,20 +32,15 @@ void CatPictureApp::mouseDown( MouseEvent event )
 
 void CatPictureApp::update() //updates variables
 {
-	red = red + 0.01f;
-	if (red > 1.0f)
+	red = red - 0.01f;
+	if (red < 0.0f)
 	{
-		red = 0;
+		red = 1.0;
 	}
-	green = green + 0.02f;
+	green = green + 0.01f;
 	if (green > 1.0f)
 	{
-		green = 0;
-	}
-	blue = blue + 0.03f;
-	if (blue > 1.0f)
-	{
-		blue = 0;
+		green = 0.0;
 	}
 }
 
